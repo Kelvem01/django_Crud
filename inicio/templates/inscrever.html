@@ -169,7 +169,7 @@
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'inicio' %}">Inicio</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'inscrever' %}">Inscrever</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Salvar</a>
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Atualizar</a>
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Apagar</a>
       </nav>
@@ -178,65 +178,27 @@
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-4 fw-normal text-body-emphasis">Crud Kevito</h1>
       <p class="fs-5 text-body-secondary">Esta aplicação foi realizada para fins educativos , práticos e treinos .</p>
-    
     </div>
   </header>
+  <div class="col-md-6">
+  </div>
+  {% if sucesso %}
+  <p class="alert alert-success">Inscrição enviada com sucesso!</p>
+  {% else %}
+  <form action="" method="POST"> 
+    {% csrf_token %}
+    <label>Nome:</label> <br>
+    <input type="text" name="nome" size="18"   class="form-control" value="{{ pessoa.nome }}"> <br>
 
-  <main>
-    <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">em criação</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">em branco<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-outline-primary">em branco</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm">
-          <div class="card-header py-3">
-            <h4 class="my-0 fw-normal">em criação</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">em branco<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">vazio</button>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card mb-4 rounded-3 shadow-sm border-primary">
-          <div class="card-header py-3 text-bg-primary border-primary">
-            <h4 class="my-0 fw-normal">em branco</h4>
-          </div>
-          <div class="card-body">
-            <h1 class="card-title pricing-card-title">em branco<small class="text-body-secondary fw-light">/mo</small></h1>
-            <ul class="list-unstyled mt-3 mb-4">
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-              <li>em branco</li>
-            </ul>
-            <button type="button" class="w-100 btn btn-lg btn-primary">fale comigo</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
+    <label>Idade:</label> <br>
+    <input type="text" name="idade" size="18"  class="form-control" value="{{ pessoa.idade }}"> <br>
+
+    <label>E-mail:</label> <br>
+    <input type="text" name="email" size="18"  class="form-control" value="{{ pessoa.email }}"> <br>
+    <button type="submit">Salvar</button>
+  </form>
+  {% endif %}
+ 
 
   <footer class="pt-4 my-md-5 pt-md-5 border-top">
     <div class="row">
