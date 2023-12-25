@@ -1,4 +1,5 @@
 from django.shortcuts import render , redirect
+from inicio.forms import CadastrarForm
 from inicio.models import Pessoa
 
 def inicio(request):
@@ -7,12 +8,12 @@ def inicio(request):
 
 # insert objects on database
 def cadastrar(request):
-    nome = request.POST.get("nome")
-    idade = request.POST.get("idade")
-    email = request.POST.get("email")
-    pessoa = Pessoa(nome=nome,idade=idade,email=email)
-    pessoa.save()
-    return redirect("inicio")
+    contexto = {'sucesso': False}
+    form = CadastrarForm(request.POST or None)
+    if form.is_valid():
+        contexto['sucesso'] = True
+    contexto['form'] = form
+    return render(request,"cadastrar.html" ,contexto)
 
 
 def editar(request,id):

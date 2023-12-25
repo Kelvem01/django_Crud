@@ -164,12 +164,12 @@
       <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img">
           <title>Bootstrap</title><path fill-rule=""></path></svg>
-        <span class="fs-4">Crud example</span>
+        <span class="fs-4">Crud</span>
       </a>
 
       <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'inicio' %}">Inicio</a>
-        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Salvar</a>
+        <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="{% url 'cadastrar' %}">Cadastrar</a>
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Atualizar</a>
         <a class="me-3 py-2 link-body-emphasis text-decoration-none" href="#">Apagar</a>
       </nav>
@@ -178,64 +178,49 @@
     <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
       <h1 class="display-4 fw-normal text-body-emphasis">Crud Kevito</h1>
       <p class="fs-5 text-body-secondary">Esta aplicação foi realizada para fins educativos , práticos e treinos .</p>
+    
     </div>
-  </header>
-  <div class="col-md-6">
-  </div>
-  {% if sucesso %}
-  <p class="alert alert-success">Inscrição enviada com sucesso!</p>
-  {% else %}
-  <form action="" method="POST"> 
-    {% csrf_token %}
-    <label>Nome:</label> <br>
-    <input type="text" name="nome" size="18"   class="form-control" value="{{ pessoa.nome }}"> <br>
-
-    <label>Idade:</label> <br>
-    <input type="text" name="idade" size="18"  class="form-control" value="{{ pessoa.idade }}"> <br>
-
-    <label>E-mail:</label> <br>
-    <input type="text" name="email" size="18"  class="form-control" value="{{ pessoa.email }}"> <br>
-    <button type="submit">Salvar</button>
-  </form>
-  {% endif %}
- 
-
-  <footer class="pt-4 my-md-5 pt-md-5 border-top">
-    <div class="row">
-      <div class="col-12 col-md">
-        <img class="mb-2" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
-        <small class="d-block mb-3 text-body-secondary">&copy;2023</small>
-      </div>
-      <div class="col-6 col-md">
-        <h5>em branco</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>em branco</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-        <h5>sobre</h5>
-        <ul class="list-unstyled text-small">
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-          <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
-        </ul>
-      </div>
+    <div class="row m-2">
+        {% block conteudo %}
+        {% endblock %}
     </div>
-    <footer>Desenvolvido por Kelvem Ferreira </footer>
-  </footer>
+  <main>
+    <footer class="blog-footer">
+        <footer class="pt-4 my-md-5 pt-md-5 border-top">
+            <div class="row">
+              <div class="col-12 col-md">
+                <img class="mb-2" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="24" height="19">
+                <small class="d-block mb-3 text-body-secondary">&copy;2023</small>
+              </div>
+              <div class="col-6 col-md">
+                <h5>E-mail</h5>
+                <ul class="list-unstyled text-small">
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md">
+                <h5>Contato</h5>
+                <ul class="list-unstyled text-small">
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                </ul>
+              </div>
+              <div class="col-6 col-md">
+                <h5>sobre</h5>
+                <ul class="list-unstyled text-small">
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                  <li class="mb-1"><a class="link-secondary text-decoration-none" href="#">em branco</a></li>
+                </ul>
+              </div>
+        <p>Desenvolvido por Kelvem </p>
+    </footer>
 </div>
 <script src="/static/bootstrap.bundle.min.js"></script>
 

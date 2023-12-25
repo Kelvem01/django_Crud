@@ -13,6 +13,7 @@ adcionar o arquivo css,budle ,js
 em seguida passar os caminhos
 
 ############################################################
+herança de templates 
 {% include "minha pagina"%}
 
 o que tem que ser incluido
@@ -20,6 +21,15 @@ o que tem que ser incluido
 {% block content %} {% endblock %}
 
 {% extends "minhapagina.html" %} usada para importar para pagina em uso 
+
+#############################################################
+form.py
+
+from django import forms importar o django forms no arquivo
+
+criar um arquivo forms.py para formulario
+#############################################################
+instalar o Bootstrap-v5 com o comando pip install django-bootstrap-v5
 
 #############################################################
 
