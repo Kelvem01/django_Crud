@@ -1,13 +1,16 @@
 from django.db import models
 
 class Pessoa(models.Model):
-    nome = models.CharField(max_length=100, verbose_name="nome")
-    idade = models.IntegerField(blank=True)
-    email = models.EmailField(max_length=150,verbose_name="email")
+    nome = models.CharField(verbose_name="Nome", max_length=100 )
+    idade = models.IntegerField(verbose_name="Idade",blank=True, null=True)
+    email = models.EmailField(verbose_name="E-mail",max_length=150)
     
-    class Meta: #Força que o nome da tabela seja "evento" e não "inicio"
-        db_table = 'Pessoa'
-    
+    class Meta:
+        verbose_name = "Pessoa"
+        verbose_name_plural = "Pessoas"
+        ordering = ["nome"]
+        
     def __str__(self):
-        return "class <Pessoa>"
+        return self.nome
+    
         

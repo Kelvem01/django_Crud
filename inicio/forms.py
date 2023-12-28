@@ -1,7 +1,13 @@
 from django import forms
+from .models import Pessoa
 
-class CadastrarForm(forms.Form):
-    nome = forms.CharField(label='Nome', max_length=100)
-    idade = forms.IntegerField(label='Idade')
-    email = forms.EmailField(label='E-mail')
-    
+class CadastrarForm(forms.ModelForm):
+    class Meta:
+        model = Pessoa
+        fields = ['nome', 'idade','email']
+
+        
+class EditarForm(forms.ModelForm):
+    class Meta:
+        model = Pessoa
+        fields = ['nome', 'idade','email']

@@ -14,7 +14,7 @@ em seguida passar os caminhos
 
 ############################################################
 herança de templates 
-{% include "minha pagina"%}
+{% include "minha_pagina.html"%}
 
 o que tem que ser incluido
 
