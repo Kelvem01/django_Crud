@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+
+<li>Deletar Pessoa</li>
+{% block content %}
+Tem certeza que deseja deletar a pessoa '{{pessoa.nome}}'?
+<form action="" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Sim tenho certeza!">
+    <input type="reset" onclick="location.href='{% url 'listar'%}'" value="não quero apagar">
+</form>
+{% endblock%}

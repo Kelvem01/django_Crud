@@ -1,0 +1,14 @@
+{% extends "base.html "%}
+{% load bootstrap5 %}
+
+{% block conteudo %}
+<h1>Lista de detalhes das pessoas </h1>
+{% for pessoa in pessoas %}
+<ul>
+    <li>
+        ID: {{pessoa.id}}- Nome:{{pessoa.nome}}-  E-mail:{{pessoa.email}}
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock%}

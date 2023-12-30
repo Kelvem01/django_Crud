@@ -1,0 +1,16 @@
+{% extends "base.html "%}
+{% load bootstrap5 %}
+
+{% block conteudo %}
+<h1>Lista de  pessoas Cadastradas</h1>
+{% for pessoa in pessoas %}
+
+<ul>
+    <li>{{pessoa.id}} - {{ pessoa.nome }}
+        <a href="{% url 'update' pessoa.id %}">Editar</a>
+        <a href="{% url 'delete' pessoa.id %}">Deletar</a>
+    </li>
+</ul>
+
+{% endfor %}
+{% endblock%}
